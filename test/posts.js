@@ -1,16 +1,21 @@
 import supertest from "supertest";
 import "dotenv/config";
 import { expect } from "chai";
+import { createRandomUser } from "../helpers/user-calls";
 
 const apiToken = process.env.TOKEN;
 const request = supertest("https://gorest.co.in/public/v2/");
 
-describe.only("User Posts", () => {
-  let postId;
+describe("User Posts", () => {
+  let postId, userId;
+
+  before(async () => {
+    userId = await createRandomUser();
+  });
 
   it("/posts", async () => {
     const data = {
-      user_id: 7358017,
+      user_id: userId,
       title: "My title",
       body: "my blog post",
     };
