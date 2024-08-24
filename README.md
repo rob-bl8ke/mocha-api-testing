@@ -7,5 +7,9 @@ npm init -y
 
 Install the necessary packages
 ```
-npm i --save-dev supertest chai @babel/cli @babel/core @babel/node @babel/register @babel/preset-env
+npm i --save-dev mocha supertest chai @babel/cli @babel/core @babel/node @babel/register @babel/preset-env
 ```
+
+# References
+
+- [Online REST API for Testing and Prototyping](https://gorest.co.in/)
