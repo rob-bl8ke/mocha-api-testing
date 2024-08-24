@@ -19,17 +19,31 @@ describe('Users', () => {
         });
     });
 
-    it.only('GET /users with query params', () => {
+    it('GET /users with query params', () => {
         const url = `users?access-token=${apiToken}&page=2&gender=female&status=active`
 
         return request.get(url).then(res => {
-            // console.log(res.body);
-            console.log(Array.isArray(res.body))
             res.body.forEach(data => {
-                //console.log(data.gender);
                 expect(data.gender).to.eq('female');
                 expect(data.status).to.eq('active');
             });
         });
+    });
+
+    it.only('POST /users', () => {
+        const data = {
+            email: `bluesmurf${Math.floor(Math.random() * 9999)}@smurfmail.za`,
+            name: 'Test name',
+            gender: 'male',
+            status: 'inactive'
+        };
+
+        return request.post('users')
+            .set('Authorization', `Bearer ${apiToken}`)
+            .send(data).then(res => {
+                console.log(res.body);
+                expect(res.body.email).to.eq(data.email);
+                expect(res.body.status).to.eq(data.status);
+            });
     });
 });
