@@ -21,6 +21,18 @@ Install faker and generate from a massive library of fake data.
 ```
 npm i faker
 ```
+
+### Pimp up reporting with `mochawesome`
+
+```
+npm install --save-dev mochawesome
+```
+To run the report...
+```
+npm test -- --reporter mochawesome
+```
+When you add it to the package.json scripts you can simply use `npm run test-report`.
+
 # References
 
 - [Online REST API for Testing and Prototyping](https://gorest.co.in/)
