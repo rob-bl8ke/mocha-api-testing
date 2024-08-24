@@ -8,14 +8,28 @@ const request = supertest('https://gorest.co.in/public/v2/')
 describe('Users', () => {
     it('GET /users', () => {
       return request.get(`users?access-token=${apiToken}`).then((res) => {
-        expect(res.body).to.not.be.empty;
-      });
+        expect(res.body).to.not.be.empty; });
     });
+
     it('GET /users/:id', () => {
         return request
-          .get(`users/7357440?access-token=${apiToken}`)
-          .then((res) => {
-            expect(res.body).to.not.be.empty;
-          });
+        .get(`users/7357440?access-token=${apiToken}`)
+        .then((res) => {
+            expect(res.body).to.be.eq(7357440);
+        });
+    });
+
+    it.only('GET /users with query params', () => {
+        const url = `users?access-token=${apiToken}&page=2&gender=female&status=active`
+
+        return request.get(url).then(res => {
+            // console.log(res.body);
+            console.log(Array.isArray(res.body))
+            res.body.forEach(data => {
+                //console.log(data.gender);
+                expect(data.gender).to.eq('female');
+                expect(data.status).to.eq('active');
+            });
+        });
     });
 });
