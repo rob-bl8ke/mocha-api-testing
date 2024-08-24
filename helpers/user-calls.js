@@ -1,7 +1,7 @@
 import supertest from "supertest";
 import "dotenv/config";
 
-const request = supertest("https://gorest.co.in/public/v2/");
+const request = supertest(process.env.BASE_URL);
 
 export const createRandomUser = async () => {
   const data = {

@@ -3,7 +3,7 @@ import "dotenv/config";
 import { expect } from 'chai';
 
 const apiToken = process.env.TOKEN;
-const request = supertest('https://gorest.co.in/public/v2/')
+const request = supertest(process.env.BASE_URL);
 
 describe('Users', () => {
     let userId;
