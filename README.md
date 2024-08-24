@@ -1,5 +1,6 @@
 # Testing APIs with Mocha and SuperTest
 
+
 Initialize the project.
 ```
 npm init -y
@@ -23,3 +24,5 @@ npm i faker
 # References
 
 - [Online REST API for Testing and Prototyping](https://gorest.co.in/)
+- [Source Tutorial on YouTube](https://www.youtube.com/playlist?list=PL6AdzyjjD5HDR2kNRU2dA1C8ydXRAaaBV)
+- [Source Tutorial Repository](https://github.com/dilpreetj/JavaScript-API-Automation-Tests)
