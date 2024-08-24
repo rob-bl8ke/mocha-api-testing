@@ -1,9 +1,8 @@
 import supertest from 'supertest';
 import "dotenv/config";
 import { expect } from 'chai';
-
-const apiToken = process.env.TOKEN;
-const request = supertest(process.env.BASE_URL);
+import request from '../config/request';
+import apiToken from '../config/token';
 
 describe('Users', () => {
     let userId;

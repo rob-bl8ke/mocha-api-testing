@@ -2,9 +2,8 @@ import supertest from "supertest";
 import "dotenv/config";
 import { expect } from "chai";
 import { createRandomUser } from "../helpers/user-calls";
-
-const apiToken = process.env.TOKEN;
-const request = supertest("https://gorest.co.in/public/v2/");
+import request from "../config/request";
+import apiToken from "../config/token";
 
 describe("User Posts", () => {
   let postId, userId;
@@ -52,7 +51,7 @@ describe("User Posts", () => {
         expect(res.body.message).to.eq("Authentication failed");
       });
 
-      it.only("No title returns 422 validation failed", async () => {
+      it("No title returns 422 validation failed", async () => {
         const data = {
           user_id: userId,
           body: "my blog post",

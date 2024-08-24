@@ -1,7 +1,7 @@
 import supertest from "supertest";
 import "dotenv/config";
-
-const request = supertest(process.env.BASE_URL);
+import request from "../config/request";
+import apiToken from "../config/token";
 
 export const createRandomUser = async () => {
   const data = {
@@ -13,7 +13,7 @@ export const createRandomUser = async () => {
 
   const result = await request
     .post("users")
-    .set("Authorization", `Bearer ${process.env.TOKEN}`)
+    .set("Authorization", `Bearer ${apiToken}`)
     .send(data);
     return result.body.id;
 };
