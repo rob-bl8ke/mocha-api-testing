@@ -48,7 +48,7 @@ describe('Users', () => {
         });
     });
 
-    it.only('PUT /users', () => {
+    it('PUT /users', () => {
         const data = {
             email: `fluffywhite${Math.floor(Math.random() * 9999)}@powerdogs.com`,
             name: 'Fluffy White',
@@ -64,6 +64,17 @@ describe('Users', () => {
             // Assert everything...
             // data.email = 'test@mail.co.za';
             expect(res.body).to.deep.include(data);
+          });
+    });
+
+    it.only('PUT /users', () => {
+        const expectedResponse = {};
+
+        return request
+          .delete("users/7358002")
+          .set("Authorization", `Bearer ${apiToken}`)
+          .then((res) => {
+            expect(res.body).to.deep.include(expectedResponse);
           });
     });
 });
