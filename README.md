@@ -14,6 +14,12 @@ npm i --save-dev mocha supertest chai @babel/cli @babel/core @babel/node @babel/
 
 - [Error occurs when using import with Chai 5](https://github.com/chaijs/chai/issues/1561), stuck on 4.2 for now.
 
+### Install Faker
+Install faker and generate from a massive library of fake data.
+
+```
+npm i faker
+```
 # References
 
 - [Online REST API for Testing and Prototyping](https://gorest.co.in/)

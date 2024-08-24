@@ -4,6 +4,7 @@ import { expect } from "chai";
 import { createRandomUser } from "../helpers/user-calls";
 import request from "../config/request";
 import apiToken from "../config/token";
+import { faker } from "@faker-js/faker";
 
 describe("User Posts", () => {
   let postId, userId;
@@ -15,9 +16,11 @@ describe("User Posts", () => {
   it("/posts", async () => {
     const data = {
       user_id: userId,
-      title: "My title",
-      body: "my blog post",
+      title: faker.lorem.sentence(5),
+      body: faker.lorem.paragraph(2)
     };
+
+    // console.log(data);
 
     const res = await request
       .post("posts")
@@ -39,8 +42,8 @@ describe("User Posts", () => {
       it("401 authentication failed", async () => {
         const data = {
           user_id: userId,
-          title: "My title",
-          body: "my blog post",
+          title: faker.lorem.sentence(5),
+          body: faker.lorem.paragraph(2)
         };
         
         const res = await request
@@ -54,7 +57,7 @@ describe("User Posts", () => {
       it("No title returns 422 validation failed", async () => {
         const data = {
           user_id: userId,
-          body: "my blog post",
+          body: faker.lorem.paragraph(2)
         };
 
         const res = await request

@@ -15,6 +15,7 @@
     "@babel/node": "^7.25.0",
     "@babel/preset-env": "^7.25.4",
     "@babel/register": "^7.24.6",
+    "@faker-js/faker": "^8.4.1",
     "chai": "^4.2.0",
     "mocha": "^10.7.3",
     "supertest": "^7.0.0"
