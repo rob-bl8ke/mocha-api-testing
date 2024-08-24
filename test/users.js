@@ -30,7 +30,7 @@ describe('Users', () => {
         });
     });
 
-    it.only('POST /users', () => {
+    it('POST /users', () => {
         const data = {
             email: `bluesmurf${Math.floor(Math.random() * 9999)}@smurfmail.za`,
             name: 'Test name',
@@ -46,5 +46,24 @@ describe('Users', () => {
                 expect(res.body).to.deep.include(data);
 
         });
+    });
+
+    it.only('PUT /users', () => {
+        const data = {
+            email: `fluffywhite${Math.floor(Math.random() * 9999)}@powerdogs.com`,
+            name: 'Fluffy White',
+            gender: 'male',
+            status: 'active'
+        };
+
+        return request
+          .put("users/7358006")
+          .set("Authorization", `Bearer ${apiToken}`)
+          .send(data)
+          .then((res) => {
+            // Assert everything...
+            // data.email = 'test@mail.co.za';
+            expect(res.body).to.deep.include(data);
+          });
     });
 });
