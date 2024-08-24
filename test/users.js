@@ -41,9 +41,10 @@ describe('Users', () => {
         return request.post('users')
             .set('Authorization', `Bearer ${apiToken}`)
             .send(data).then(res => {
-                console.log(res.body);
-                expect(res.body.email).to.eq(data.email);
-                expect(res.body.status).to.eq(data.status);
-            });
+                // Assert everything...
+                // data.email = 'test@mail.co.za';
+                expect(res.body).to.deep.include(data);
+
+        });
     });
 });
