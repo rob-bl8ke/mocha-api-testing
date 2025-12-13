@@ -1,8 +1,9 @@
+
 # Mocha API Testing Project
 
 This project provides a template for testing REST APIs using [Mocha](https://mochajs.org/), [SuperTest](https://github.com/ladjs/supertest), and related tools. It is designed for easy setup and quick test execution, even after a long break from the project.
 
-> **Note:** This project is tested with Node.js `v20.18.0`.
+> **Note:** This project is compatible with Node.js `v22.14.0` and uses the latest supported versions of all dependencies as of December 2025.
 
 ---
 
@@ -71,10 +72,14 @@ TOKEN=your_api_token_here
 
 Below are the main packages used in this project, with a brief description of why each is included:
 
+
+
 ### Core Testing
 - **mocha**: Test runner for JavaScript, used to structure and run tests.
 - **chai**: Assertion library for writing readable test assertions.
 - **supertest**: HTTP assertions for testing REST APIs, works well with Mocha.
+
+
 
 ### Babel (for ES6+ Support)
 - **@babel/core**: Babel compiler core.
@@ -83,9 +88,13 @@ Below are the main packages used in this project, with a brief description of wh
 - **@babel/register**: Hook to compile files on the fly when required.
 - **@babel/preset-env**: Smart preset to compile ES6+ down to ES5.
 
+
+
 ### Utilities
 - **dotenv**: Loads environment variables from `.env` into `process.env`.
 - **@faker-js/faker**: Generates fake data for testing (e.g., random names, emails).
+
+
 
 ### Reporting
 - **mochawesome**: Generates beautiful HTML/CSS test reports for Mocha.
@@ -114,10 +123,11 @@ The report will be saved in the `mochawesome-report/` directory.
 
 ---
 
+
 ## Troubleshooting & Gotchas
 
-- **Chai v5 import issues:**
-  - [Chai 5 import error](https://github.com/chaijs/chai/issues/1561): Project uses Chai 4.2 due to compatibility issues with ES module imports.
+- If you encounter issues after upgrading dependencies, check the official documentation and release notes for breaking changes.
+- Ensure your Node.js version is at least v22.14.0 for best compatibility.
 
 ---
 

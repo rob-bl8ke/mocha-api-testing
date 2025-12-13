@@ -11,18 +11,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.24.8",
+    "@babel/cli": "^7.25.2",
     "@babel/core": "^7.25.2",
-    "@babel/node": "^7.25.0",
+    "@babel/node": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
-    "@babel/register": "^7.24.6",
-    "@faker-js/faker": "^8.4.1",
-    "chai": "^4.2.0",
-    "mocha": "^10.7.3",
-    "mochawesome": "^7.1.3",
-    "supertest": "^7.0.0"
+    "@babel/register": "^7.25.2",
+    "@faker-js/faker": "^9.2.0",
+    "chai": "^5.1.0",
+    "mocha": "^11.2.0",
+    "mochawesome": "^7.1.4",
+    "supertest": "^7.1.4"
   },
   "dependencies": {
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.5.0"
   }
 }
